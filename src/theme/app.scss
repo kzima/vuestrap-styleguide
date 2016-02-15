@@ -1,0 +1,21 @@
+h1,h2,h3,h4,h5,h6,th {
+	font-family: $font-family-serif;
+	font-weight: 400;
+}
+
+a, p, small, strong {
+	font-family: $font-family-sans-serif;
+}
+
+.navbar {
+	.navbar-brand {
+		strong {
+			color: $link-color
+		}
+	}
+}
+
+.btn-signup {
+	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+	border: 0;
+}

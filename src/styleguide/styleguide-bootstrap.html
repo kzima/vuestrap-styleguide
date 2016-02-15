@@ -1,0 +1,407 @@
+<div class="row">    
+  <div class="col-xs-6">
+    <section id="navbar">
+      <header>
+        <h1>Navbar 
+          <vs-dropdown 
+            class="pull-xs-right"
+            :arrow="true">
+            <div slot="button"><vs-icon name="cog"></vs-icon></div>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('navbar', 'inverse')">Inverse <vs-icon class="pull-xs-right" name="check" v-show="navbar.inverse"></vs-icon></a></li>
+            </ul>
+          </vs-dropdown>
+        </h1>
+
+      </header>
+      <nav class="navbar navbar-{{navbar.inverse ? 'dark' : 'light'}} {{navbar.inverse ? 'bg-inverse' : 'bg-faded'}} m-b">
+        <a class="navbar-brand text-uppercase" href="#">Super<strong>App</strong></a>
+        <ul class="nav navbar-nav pull-xs-left">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+        <div class="pull-xs-right">
+          <a class="btn btn-login" href="#">Login</a>
+          <a class="btn btn-signup" href="#">Signup</a>
+        </div>
+      </nav>
+    </section>
+  </div>
+  <div class="col-xs-3">
+    <section id="popover">
+      <header>
+        <h1>Popover</h1>
+      </header>
+      <div class="popover popover-top">
+        <div class="popover-arrow"></div>
+        <h3 class="popover-title">Popover top</h3>
+        <div class="popover-content">
+          <p>Sed posuere consectetur est at lobortis.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="col-xs-3">
+    <section id="tooltip">
+      <header>
+        <h1>Tooltip</h1>
+      </header>
+      <div class="tooltip fade in tooltip bs-tether-element-attached-bottom in" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner">Tooltip on top</div></div>
+    </section>
+  </div>
+</div>
+
+<div class="row">    
+  <div class="col-xs-6">
+    <section id="buttons">
+      <header>
+        <h1>Buttons
+          <vs-dropdown 
+            class="pull-xs-right"
+            :arrow="true">
+            <div slot="button"><vs-icon name="cog"></vs-icon></div>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'regular')">Regular <vs-icon class="pull-xs-right" name="check" v-show="buttons.regular"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'outline')">Outline <vs-icon class="pull-xs-right" name="check" v-show="buttons.outline"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'sizes')">Sizes <vs-icon class="pull-xs-right" name="check" v-show="buttons.sizes"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'primary')">Primary <vs-icon class="pull-xs-right" name="check" v-show="buttons.primary"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'secondary')">Secondary <vs-icon class="pull-xs-right" name="check" v-show="buttons.secondary"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'success')">Success <vs-icon class="pull-xs-right" name="check" v-show="buttons.success"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'info')">Info <vs-icon class="pull-xs-right" name="check" v-show="buttons.info"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'warning')">Warning <vs-icon class="pull-xs-right" name="check" v-show="buttons.warning"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('buttons', 'danger')">Danger <vs-icon class="pull-xs-right" name="check" v-show="buttons.danger"></vs-icon></a></li>
+            </ul>
+          </vs-dropdown>
+        </h1>
+      </header>
+
+      <!-- colour variants -->
+      <div class="m-b" v-show="buttons.regular">
+        <span v-for="item in buttonVariants" class="btn btn-{{item}} btn-md" v-show="buttons[item]">{{item}}</span>
+      </div>
+
+      <!-- outlined variants -->
+      <div class="m-b" v-show="buttons.outline">
+        <span v-for="item in buttonVariants" class="btn btn-{{item}}-outline btn-md" v-show="buttons[item]">{{item}}</span>
+      </div>
+
+      <!-- button sizes -->
+      <div class="m-b" v-show="buttons.sizes">
+        <span class="btn btn-primary btn-lg">Large</span>
+        <span class="btn btn-primary btn-md">Medium</span>
+        <span class="btn btn-primary btn-sm">Small</span>
+      </div>
+
+      <!-- button types -->
+      <div class="m-b">
+        <span class="btn btn-primary btn-md disabled">Disabled</span>
+        <span class="btn btn-link btn-md">Button Link</span>
+      </div> 
+
+      <!-- pagination -->
+      <div class="m-b">
+        <nav class="pull-xs-left">
+          <ul class="pagination pagination-sm">
+            <li class="page-item">
+              <a class="page-link disabled" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link hover" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="pull-xs-right">
+          <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xs-3">
+    <section id="dropdown">
+      <header>
+        <h1>Dropdown</h1>
+      </header>
+      <div class="dropdown open">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <a class="dropdown-item" href="#">Action</a>
+            <h6 class="dropdown-header">Dropdown header</h6>
+            <a class="dropdown-item hover" href="#">Another action (hover)</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xs-3">
+    <section id="alerts">
+      <header>
+        <h1>Alerts
+          <vs-dropdown 
+            class="pull-xs-right"
+            :arrow="true">
+            <div slot="button"><vs-icon name="cog"></vs-icon></div>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('alerts', 'success')">Success <vs-icon class="pull-xs-right" name="check" v-show="alerts.success"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('alerts', 'info')">Info <vs-icon class="pull-xs-right" name="check" v-show="alerts.info"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('alerts', 'warning')">Warning <vs-icon class="pull-xs-right" name="check" v-show="alerts.warning"></vs-icon></a></li>
+                <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('alerts', 'danger')">Danger <vs-icon class="pull-xs-right" name="check" v-show="alerts.danger"></vs-icon></a></li>
+            </ul>
+          </vs-dropdown></h1>
+        </h1>
+      </header>
+      <div class="alert alert-success" role="alert" v-show="alerts.success">
+        <strong>Well done!</strong> message.
+      </div>
+      <div class="alert alert-info" role="alert" v-show="alerts.info">
+        <strong>Heads up!</strong> message.
+      </div>
+      <div class="alert alert-warning" role="alert" v-show="alerts.warning">
+        <strong>Warning!</strong> message.
+      </div>
+      <div class="alert alert-danger" role="alert" v-show="alerts.danger">
+        <strong>Oh snap!</strong> message.
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-xs-12">  
+    <section id="typography">
+      <header>
+        <h1>Typography</h1>
+      </header>
+      <div class="col-xs-6">
+        <h1>Example heading <span class="label label-default">New</span></h1>
+        <h2>Example heading <span class="label label-default">New</span></h2>
+        <h3>Example heading <span class="label label-default">New</span></h3>
+        <h4>Example heading <span class="label label-default">New</span></h4>
+        <h5>Example heading <span class="label label-default">New</span></h5>
+        <h6>Example heading <span class="label label-default">New</span></h6>        
+      </div>
+      <div class="col-xs-6">
+        <h3>
+          Fancy display heading
+          <small class="text-muted">Secondary text</small>
+        </h3>
+        <p class="lead">
+          This is a lead paragraph
+        </p>
+        <p>Body text. <a href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. Totam ducimus ad optio debitis ipsum sequi, aperiam! Incidunt officia iusto distinctio.</p>
+        <div class="media">
+          <a class="media-left" href="#">
+            <img class="media-object" src="http://placehold.it/50x50" alt="Generic placeholder image">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+        </div>
+      </div>
+    </section>
+  </div>  
+</div>
+
+<div class="row"> 
+  <div class="col-xs-6">
+    <section id="forms">
+      <header>
+        <h1>Forms
+         <vs-dropdown 
+            class="pull-xs-right"
+            :arrow="true">
+            <div slot="button"><vs-icon name="cog"></vs-icon></div>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('forms', 'size', 'sm')">Small <vs-icon class="pull-xs-right" name="check" v-show="forms.size === 'sm'"></vs-icon></a></li>
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('forms', 'size', 'md')">Medium <vs-icon class="pull-xs-right" name="check" v-show="forms.size === 'md'"></vs-icon></a></li>
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('forms', 'size', 'lg')">Large <vs-icon class="pull-xs-right" name="check" v-show="forms.size === 'lg'"></vs-icon></a></li>
+            </ul>
+          </vs-dropdown></h1>
+      </header>
+      <form>
+        <fieldset class="form-group col-xs-6">
+          <label for="formGroupExampleInput">Normal State</label>
+          <input type="text" class="form-control form-control-{{forms.size}}" id="formGroupExampleInput" placeholder="Example input">
+        </fieldset>
+        <fieldset class="form-group col-xs-6">
+          <label for="formGroupExampleInput2">Focus State</label>
+          <input type="text" class="form-control form-control-{{forms.size}} focus" id="formGroupExampleInput2" placeholder="Example input" value="I am focused">
+        </fieldset>
+       <fieldset class="form-group has-danger col-xs-6">
+          <label for="formGroupExampleInput">Error</label>
+          <input type="text" class="form-control form-control-{{forms.size}} form-control-danger" id="formGroupExampleInput" placeholder="Example input" value="I am error">
+        </fieldset>
+        <fieldset class="form-group has-success col-xs-6">
+          <label for="formGroupExampleInput2">Validated</label>
+          <input type="text" class="form-control form-control-{{forms.size}} form-control-success" id="formGroupExampleInput2" placeholder="Example input" value="I am validated">
+        </fieldset>
+        <div class="col-xs-12">
+          <label class="c-input c-checkbox">
+            <input type="checkbox">
+            <span class="c-indicator"></span>
+            checkbox
+          </label>
+          <label class="c-input c-checkbox">
+            <input type="checkbox" checked>
+            <span class="c-indicator"></span>
+            checkbox checked
+          </label>
+          <label class="c-input c-radio">
+            <input id="radio1" name="radio" type="radio">
+            <span class="c-indicator"></span>
+            radio
+          </label>
+          <label class="c-input c-radio">
+            <input id="radio1" name="radio" type="radio" checked>
+            <span class="c-indicator"></span>
+            radio cehcked
+          </label>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="col-xs-6">    
+    <section id="tables">
+      <header>
+        <h1>Table
+          <vs-dropdown 
+            class="pull-xs-right"
+            :arrow="true">
+            <div slot="button"><vs-icon name="cog"></vs-icon></div>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('table', 'inverse')">Inverse table<vs-icon class="pull-xs-right" name="check" v-show="table.inverse"></vs-icon></a></li>
+              <li><a class="dropdown-item" href="#" v-on:click.prevent.stop="setItem('thead', 'inverse')">Inverse thead<vs-icon class="pull-xs-right" name="check" v-show="thead.inverse"></vs-icon></a></li>
+            </ul>
+          </vs-dropdown>
+        </h1>
+      </header>
+      <table class="table table-hover {{table.inverse ? 'table-inverse' : ''}}">
+        <thead class="thead-inverse" v-show="thead.inverse">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <thead class="thead-default" v-show="!thead.inverse">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr class="hover">
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="col-xs-4">
+    <section id="modal">
+      <header>
+        <h1>Modal</h1>
+      </header>
+      <div class="modal fade in">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              Modal title
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </section>
+  </div>
+
+  <div class="col-xs-4">
+    <section id="card">
+      <header>
+        <h1>Card</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Special title treatment</h4>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-xs-4">
+    <section id="list-group">
+      <header>
+        <h1>List Group</h1>
+      </header>
+      <div class="list-group">
+        <a href="#" class="list-group-item active">
+          <h4 class="list-group-item-heading">List group item heading</h4>
+          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        </a>
+        <a href="#" class="list-group-item disabled">
+          Disabled
+        </a>
+        <a href="#" class="list-group-item">
+          <span class="label label-default label-pill pull-xs-right">14</span>
+          With label
+        </a>
+      </div>
+    </section>
+  </div>

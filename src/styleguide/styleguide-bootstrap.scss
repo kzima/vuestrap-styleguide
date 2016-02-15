@@ -1,0 +1,101 @@
+#styleguide {
+	margin-top: 1rem;
+	.m-b {
+		margin-bottom: $spacer;
+	}
+	.margin-xs-right {
+		margin-right: 10px;
+	}
+	section {
+		padding-bottom: 4rem;
+		@include clearfix();
+		header {
+		  margin-top: 4rem;
+		  margin-bottom: 1rem;
+		  padding-bottom: .3rem;
+		  border-bottom: 1px solid #f1f1f1;
+		  @include clearfix();
+		  &:first-child {
+		  	margin-top: 0;
+		  }
+		  h1 {
+		    font-weight: 600;
+		    font-size: 15px;
+		    font-size: .9375rem;
+		    color: #0c0c0c;
+		    letter-spacing: .3px;
+		  }
+		}
+		&:hover header h1 {
+			color: $gray;
+		}
+	}
+
+	div[slot="button"] {
+		margin-right: 13px;
+		cursor: pointer;
+		&:hover {
+			svg {
+				opacity: 0.8;
+			}
+		}
+	}
+
+
+	#popover {
+		.popover {
+			position: relative;
+			margin-top: 0;
+		}
+	}
+
+	#buttons {
+		.btn {
+			margin-right: 5px;
+		}
+		.page-link.hover {
+		  color: $pagination-hover-color;
+	    background-color: $pagination-hover-bg;
+	    border-color: $pagination-hover-border;
+		}
+	}
+
+	#dropdown {
+		.dropdown-item.hover {
+	 	  color: $dropdown-link-hover-color;
+	    background-color: $dropdown-link-hover-bg;
+		}
+	}
+
+	#typography {
+		.styleguide-text {
+		    margin-bottom: 0.7rem;
+		}
+	}
+
+	#forms {
+		.form-control.focus {
+	    border-color: $input-border-focus;
+	    outline: none;
+		}
+	}
+
+	#tables {
+		tr.hover {
+			background-color: $table-bg-hover;
+		}
+	}
+
+	#modal {
+		.modal {
+			display: block;
+			opacity: 1;
+			position: relative;
+			.modal-dialog {
+				width: 100%;
+		    margin-top: 0;
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,37 @@
+{
+  "name": "vuestrap-styleguide",
+  "version": "0.1.0",
+  "description": "Instant Bootstrap4 theming with webpack-dev-server.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzima/vuestrap-styleguide.git"
+  },
+  "author": {
+    "name": "Kris Zima",
+    "email": "kris@mosquito.ie",
+    "url": "https://github.com/kzima"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --port 8888 --inline --hot --quiet --config webpack.config.js"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "vuestrap": "^1.0.2",
+    "vuestrap-icons": "^0.5.2",
+    "vuestrap-base-components": "^0.8.5",
+    "vuestrap-theme-loader": "^0.1.2",
+    "html-loader": "^0.3.0",
+    "babel-core": "^5.8.33",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.3.3",
+    "css-loader": "^0.21.0",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2",
+    "tether": "^1.1.1"
+  }
+}

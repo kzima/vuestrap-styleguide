@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title v-text="store.route.pageTitle">Vuestrap Styleguide</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    #styleguide {
+      max-width: 1300px;
+      padding: 1rem;
+      margin: auto;
+    }
+    </style>
+    <body id="styleguide" v-on:click="$broadcast('hide::dropdown')">
+    
+    <component :is="currentView"></component>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+    <script src="dist/bundle.js"></script>
+    </body>
+</html>
