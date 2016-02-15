@@ -1,6 +1,6 @@
 {
   "name": "vuestrap-styleguide",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Instant Bootstrap4 theming with webpack-dev-server.",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "autoprefixer-loader": "^3.1.0",
     "vuestrap": "^1.0.2",
     "vuestrap-icons": "^0.5.2",
-    "vuestrap-base-components": "^0.8.5",
+    "vuestrap-base-components": "^0.8.6",
     "vuestrap-theme-loader": "^0.1.2",
     "html-loader": "^0.3.0",
     "babel-core": "^5.8.33",
